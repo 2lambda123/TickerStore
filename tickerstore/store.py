@@ -395,7 +395,7 @@ class TickerStore:
             )
             return
 
-    def __upstox_get_access_token(self):
+    def __upstox_get_access_token_(self):
         """Fetch access token for given API creds"""
 
         logger.info("Getting Upstox access token")
