@@ -5,6 +5,18 @@ import os
 
 
 def auth_upstox() -> str:
+    import logging
+    import requests
+    import webbrowser
+    import os
+    try:
+        ts.app.run()
+        access_token = ts.app.queue.get()
+        logging.info(f"Access Token : {access_token}")
+        return access_token
+    except Exception as e:
+        logging.error(f"Error occurred during Upstox authentication: {e}")
+        return None
     """Helps in authorizing Upstox user and returns the access_token.
 
     Returns
