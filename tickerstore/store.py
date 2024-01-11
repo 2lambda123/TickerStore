@@ -16,7 +16,10 @@ import crayons
 import urllib3
 import pandas as pd
 
-logger.add("TickerStore.log", rotation="50 MB")
+import logging
+import loguru
+
+loguru.logger.add("TickerStore.log", rotation="50 MB")
 
 
 class TickerStore:
