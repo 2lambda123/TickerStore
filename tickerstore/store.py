@@ -1,7 +1,7 @@
 from upstox_api.api import *
 from . import daemon as daemon
 from tickerstore.errors import SourceError
-from tickerstore.errors import TickerStoreError
+from tickerstore.errors import TickerStoreError, SourceError
 from dotenv import load_dotenv
 from loguru import logger
 import nsepy
@@ -154,7 +154,7 @@ class TickerStore:
         if historical_data is None:
             logger.error("None of the source provided any data")
             # Returning back an empty data frame
-            return None
+            raise TickerStoreError("No data returned. None of the sources provided data for the requested time interval!")
             # raise TickerStoreError(
             #     "No data returned. No data source provided data for the requested time interval!"
             # )
