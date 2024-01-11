@@ -4,6 +4,7 @@ from tickerstore.errors import SourceError
 from tickerstore.errors import TickerStoreError, SourceError
 from dotenv import load_dotenv
 from loguru import logger
+import sys, os, requests
 import nsepy
 import datetime
 import pathlib
@@ -129,7 +130,7 @@ class TickerStore:
                     )
                     logger.info("upstox_historical_data method returned")
 
-                    break
+                    return None
                 except SourceError as e:
                     logger.error("Upstox SourceError : %s" % e)
                     print(crayons.red("Upstox source error: %s" % e, bold=True))
@@ -328,7 +329,8 @@ class TickerStore:
             A list of dictionaries is return. Each dictionary represents
             each time interval.
         """
-        if interval == TickerStore.INTERVAL_DAY_1:
+        try:
+            if interval == TickerStore.INTERVAL_DAY_1:
             data = nsepy.get_history(symbol=ticker, start=start_date, end=end_date)
             formatted_data = data.copy(deep=True)
             formatted_data = formatted_data.drop(
