@@ -349,7 +349,7 @@ class TickerStore:
         else:
             raise TickerStoreError("No data returned. The requested time interval is not available for fetching data from the NSE API.")
 
-    def __upstox_verify_credentails(self):
+    def __upstox_verify_credentials(self):
         """Verify the given Upstox credentials."""
 
         logger.info("Verifying API key and secret credentials")
