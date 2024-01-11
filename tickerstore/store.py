@@ -1,7 +1,7 @@
 from upstox_api.api import *
 from . import daemon as daemon
-from tickerstore.errors import SourceError
-from tickerstore.errors import TickerStoreError, SourceError
+from tickerstore.errors import SourceError, TickerStoreError
+from tickerstore.errors import TickerStoreError
 from dotenv import load_dotenv
 from loguru import logger
 import sys, os, requests
@@ -347,7 +347,7 @@ class TickerStore:
             )
             return formatted_data
         else:
-            raise SourceError("not available for requested time interval.")
+            raise TickerStoreError("No data returned. The requested time interval is not available for fetching data from the NSE API.")
 
     def __upstox_verify_credentails(self):
         """Verify the given Upstox credentials."""
