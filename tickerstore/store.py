@@ -406,7 +406,7 @@ class TickerStore:
         else:
             package_folder_path = pathlib.Path(__file__).parent
 
-        access_token_file = package_folder_path / "access_token.file"
+        access_token_file = pathlib.Path(self.access_token_file_path) / "access_token.file"
 
         logger.debug(f"Path for access_token file: {access_token_file}")
 
