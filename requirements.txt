@@ -15,7 +15,7 @@ docutils==0.14
 Flask==1.0.2
 future==0.18.3
 get==2018.11.19
-idna==2.7
+idna==3.7
 influxdb==5.2.0
 ipython==8.10.0
 ipython-genutils==0.2.0
