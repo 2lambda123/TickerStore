@@ -58,4 +58,4 @@ urllib3==1.26.18
 wcwidth==0.1.7
 webencodings==0.5.1
 websocket-client==0.54.0
-Werkzeug==3.0.3
+Werkzeug==3.0.6
